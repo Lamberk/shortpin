@@ -5,8 +5,8 @@ from django.shortcuts import render, redirect
 
 ALL_KEYS = (26 * 2 + 10)**4
 
+
 def index(request):
-    print ALL_KEYS
     if request.method == 'GET':
         form = CheckKeyForm()
         return render(request, 'index.html', {'form': form})
