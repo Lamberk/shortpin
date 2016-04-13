@@ -1,0 +1,26 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+<p style="padding-top:30px;"></p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h6>{{ key.id }} {{ key.status }}</h6>
+                    <form action="{% url 'index' %}" method="GET">
+                        <div class="text-center">
+                            <button class="btn btn-info" type="submit" title="">to index</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

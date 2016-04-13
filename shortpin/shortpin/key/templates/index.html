@@ -1,0 +1,32 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<p style="padding-top:20px;"></p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title">Key application</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-inline" action="{% url 'grant_key' %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-info" title="">Grant key!</button>
+                    </form>
+                    <form class="form-inline" action="{% url 'logic' %}" method="POST">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button type="submit" class="btn btn-info" title="" name="repay">Repay key!</button>
+                        <button type="submit" class="btn btn-info" title="" name="info">Info about key!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
