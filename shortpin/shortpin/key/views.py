@@ -3,8 +3,10 @@ from shortpin.key.models import Key
 
 from django.shortcuts import render, redirect
 
+ALL_KEYS = (26 * 2 + 10)**4
 
 def index(request):
+    print ALL_KEYS
     if request.method == 'GET':
         form = CheckKeyForm()
         return render(request, 'index.html', {'form': form})
@@ -68,6 +70,10 @@ def repay_key(request, **kwargs):
 
 
 def logic(request):
+    if 'count' in request.POST:
+        left = ALL_KEYS - Key.objects.count()
+        return render(request, 'count.html', {'count': left})
+
     key_id = request.POST.get('key')
     if key_id:
         if 'repay' in request.POST:

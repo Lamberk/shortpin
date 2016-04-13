@@ -21,6 +21,10 @@
                     </form>
                     <form class="form-inline" action="{% url 'logic' %}" method="POST">
                         {% csrf_token %}
+                        <button type="submit" class="btn btn-info" title="" name="count">More keys to grant!</button>
+                    </form>
+                    <form class="form-inline" action="{% url 'logic' %}" method="POST">
+                        {% csrf_token %}
                         {{ form }}
                         <button type="submit" class="btn btn-info" title="" name="repay">Repay key!</button>
                         <button type="submit" class="btn btn-info" title="" name="info">Info about key!</button>
